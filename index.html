@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+    <title>Essential Coen Brothers Trivia Game</title>
+</head>
+
+<body>
+    <!-- main heading area with game title -->
+    <div class="jumbotron">
+        <h1>Essential Coen Brothers</h1>
+        <h2>Movie Trivia Game</h2>
+    </div>
+
+
+    <!-- container that holds all the panels for the game. -->
+    <div class="container">
+        <div class="row panel-row">
+            
+            <!-- Empty panel for spacing and location purposes. -->
+            <div class="col-md-6">
+            <div class="row" id="empty-panel">           
+            </div>
+            <div class="row" id="empty-panel">
+            </div>
+        </div>
+
+            <!-- main game panel that includes the timer and trivia questions and answers -->
+            <div class="col-md-6">
+                <!-- Timer panel. -->
+                <div class="row" id="clock-panel">
+                    <h1>Time Remaining:</h1>
+                    <span id="game-timer"></span>
+                </div>
+                
+                <div class="row" id="game-panel">
+                    <div>
+                        <h3>Congrats or So Sad Message</h3>
+                    </div>
+                    <div>
+                        <h1>Question:</h1>
+                        <h3>Question section</h3>
+                    </div>
+                    <div>
+                        <h1>Answer:</h1>
+                        <h3>Answer section</h3>
+                    </div>
+                    <div>
+                        <h1>Fun Fact:</h1>
+                        <h3>Fun Fact section</h3>
+                    </div>
+                    
+                </div>
+            </div>
+            <!-- close the row-panel div: -->
+        </div>
+        <!-- close the container div: -->
+    </div>
+
+    <!-- create a copyright footer -->
+    <!-- <footer>
+        Copyright &#169; Natalie Roberts 2017
+    </footer> -->
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+</body>
+
+</html>
