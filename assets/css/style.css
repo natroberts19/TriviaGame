@@ -21,6 +21,13 @@ p, h3 {
     /* For IE8 and earlier */
 }
 
+button {
+    max-width: 100%;
+    height: auto;
+    font-family: 'Special Elite', cursive;
+    font-size: 28px;
+
+}
 #clock-panel {
     margin: 10px 5px 15px 5px;
     border-radius: 25px;

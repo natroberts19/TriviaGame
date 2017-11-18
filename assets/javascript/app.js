@@ -2,6 +2,7 @@ $(document).ready(function () {
 
 // Create global variables.
 
+
 // Create Question/Answers as objects??
 var questionOne = {
     Question: "The directorial debut for the Coen Brothers was:",
@@ -13,6 +14,7 @@ var questionOne = {
     FunFact: "The Coens, and many of the cast and crew, had never been on a film set before Blood Simple."
 }
 console.log(questionOne);
+
 var questionTwo = {
     Question: "Which of the following Coen Brothers movies won the Oscar for Best Picture?",
     A: "Fargo",
@@ -23,7 +25,28 @@ var questionTwo = {
     FunFact: 'The title of the movie comes from the first line of the William Butler Yeats poem, "Sailing to Byzantium".'
 }
 
-// Create a timeout function named gameTimer for the timer to decrement for 20 seconds on each question.
+// Create an interval timer function named gameTimer for the timer to decrement for 20 seconds on each question. 
+var timer = 21;
+var intervalId;
+
+intervalId=setInterval(gameTimer, 1000);
+function gameTimer() {
+  timer--;
+  if (timer === 0) {
+    clearInterval(intervalId);
+  }
+  
+  $("#game-timer").html("<h1>" + timer + " seconds</h1>");  
+}
+
+// Create an on-click function to start the game.
+    // 1. Target the game-panel div with a Start Game button.
+    $("#game-panel").on("click", gameTimer()); {
+        // $("#game-panel").html("<button> Start Game </button>"); **This works, just hiding for now.
+    }
+
+    // 2. After user clicks Strat Game, show the first question and answer choices in the game-panel div.
+    // 3. Call the gameTimer function to start the timer in the clock-panel div.
 
 // Create a 5-second timeout (or interval?) function named pageTimer for the answer and message displays.
 
@@ -40,15 +63,6 @@ var questionTwo = {
         // g. If NO choice is made and timer = 0, then display a sorry message and the correct answer for 5 seconds. (Call the pageTimer function.)
         // h. Advance to the next question.
         // i. Restart the timer. (Call the gameTimer function.)
-
-// Create an on-click function to start the game.
-    // 1. Target the start-panel div.
-    // 2. Show the first question and answer choices in the game-panel div.
-    // 3. Call the gameTimer function to start the timer in the clock-panel div.
-
-
-
-
 
 
 });
