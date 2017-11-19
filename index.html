@@ -18,8 +18,17 @@
 <body>
     <!-- main heading area with game title -->
     <div class="jumbotron">
-        <h1>Essential Coen Brothers</h1>
-        <h2>Movie Trivia Game</h2>
+        <div class="row">
+            <div class="col-md-7" id="game-title">
+            <h1>Essential Coen Brothers</h1>
+            <h2>Movie Trivia Game</h2>
+        </div>
+        <div class="col-md-5">
+            <span id="fun-fact"> 
+            <h3 id="fun-fact"><b>Fun Fact!</b> Jeff Bridges appeared in every single scene of The Big Lebowski.</h3> 
+            </span>
+        </div>
+        </div>
     </div>
 
 
@@ -29,35 +38,35 @@
             
             <!-- Empty panel for spacing and location purposes. -->
             <div class="col-md-6">
-            <div class="row" id="empty-panel">           
-            </div>
-            <div class="row" id="empty-panel">
-            </div>
+                <div class="row" id="empty-panel"></div>
+            <div class="row" id="empty-panel"></div>
         </div>
 
             <!-- main game panel that includes the timer and trivia questions and answers -->
             <div class="col-md-6">
                 <!-- Timer panel. -->
                 <div class="row" id="clock-panel">
-                    <h1>Time Remaining:</h1>
-                    <span id="game-timer"></span>
-                </div>
-                
+                    <h1 id="game-timer"></h1>                    
+                </div>                
+                          
                 <div class="row" id="game-panel">
-                    <div>
-                        <h3>Congrats or So Sad Message</h3>
+                    <!-- <div> -->
+                        <!-- <h3>Congrats or So Sad Message</h3> -->
+                    <!-- </div> -->
+                    <div id="question" class="hide">
+                        <!-- <h1>Question:</h1> -->
+                        <h3><span id="question">question</span></h3>    
+                    </div>
+                    <div id="answer" class="hide">
+                        <!-- <h1>Answer:</h1> -->
+                        <h3><span id="answer1">answer1</span></h3>
+                        <h3><span id="answer2">answer2</span></h3>
+                        <h3><span id="answer3">answer3</span></h3>
+                        <h3><span id="answer4">answer4</span></h3>
                     </div>
                     <div>
-                        <h1>Question:</h1>
-                        <h3>Question section</h3>
-                    </div>
-                    <div>
-                        <h1>Answer:</h1>
-                        <h3>Answer section</h3>
-                    </div>
-                    <div>
-                        <h1>Fun Fact:</h1>
-                        <h3>Fun Fact section</h3>
+                        <h3><span id="button"></span></h3>
+                        <h3><span class="hide" id="new-button"></span></h3>
                     </div>
                     
                 </div>

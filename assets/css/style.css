@@ -14,11 +14,20 @@ p, h3 {
 }
 
 .jumbotron {
-    padding: 10px 40px 10px 10px;
+    padding: 0px 40px 10px 10px;
     border: 6px solid yellow;
-    opacity: 0.6;
-    filter: alpha(opacity=60);
+    opacity: 0.7;
+    filter: alpha(opacity=70);
     /* For IE8 and earlier */
+}
+#game-title {
+    float: left;
+}
+
+#fun-fact {
+    float: right;
+    line-height: 35px;
+    margin-top: 20px;
 }
 
 button {
@@ -26,13 +35,14 @@ button {
     height: auto;
     font-family: 'Special Elite', cursive;
     font-size: 28px;
+    padding: 20px 10px 10px 10px;
 
 }
+
 #clock-panel {
-    margin: 10px 5px 15px 5px;
-    border-radius: 25px;
+    margin: 0px;
     background: none;
-    padding: 0px 10px 10px 10px;
+    padding: 0px;
     width: auto;
     height: auto;
     text-align: center;
@@ -53,17 +63,26 @@ button {
     /* For IE8 and earlier */
 }
 
+.hide {
+    display: none;
+}
+
+.show {
+    display: inline;
+}
+
 #game-panel {
     border-radius: 25px;
     margin: 10px 5px 10px 5px;
     padding: 10px 20px 20px 20px;
     text-align: center;
+    font-family: 'Special Elite', cursive;
+    font-size: 28px;
     background-color: yellow;
     opacity: 0.7;
     filter: alpha(opacity=70);
     /* For IE8 and earlier */
 }
-
 
 footer {
     color: white;
