@@ -5,8 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet">
@@ -24,7 +22,7 @@
             <h2>Movie Trivia Game</h2>
         </div>
         <div class="col-md-5">
-            <span id="fun-fact"> 
+            <span id="fun-fact" class="hide"> 
             <h3 id="fun-fact"><b>Fun Fact!</b> Jeff Bridges appeared in every single scene of The Big Lebowski.</h3> 
             </span>
         </div>
@@ -50,14 +48,14 @@
                 </div>                
                           
                 <div class="row" id="game-panel">
-                    <!-- <div> -->
-                        <!-- <h3>Congrats or So Sad Message</h3> -->
+                    <div id="message">
+                        <h3><span id="message">message</span></h3>   
                     <!-- </div> -->
-                    <div id="question" class="hide">
+                    <div id="question">
                         <!-- <h1>Question:</h1> -->
                         <h3><span id="question">question</span></h3>    
                     </div>
-                    <div id="answer" class="hide">
+                    <div id="answer">
                         <!-- <h1>Answer:</h1> -->
                         <h3><span id="answer1">answer1</span></h3>
                         <h3><span id="answer2">answer2</span></h3>
@@ -66,7 +64,7 @@
                     </div>
                     <div>
                         <h3><span id="button"></span></h3>
-                        <h3><span class="hide" id="new-button"></span></h3>
+                        <h3><span id="new-button"></span></h3>
                     </div>
                     
                 </div>
