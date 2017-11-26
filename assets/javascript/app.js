@@ -7,7 +7,8 @@ $(document).ready(function () {
     console.log("incorrect answers: " +incorrectAnswers);
     var position = 0;
     console.log("user position in quiz: " +position);
-    var answerValue, userChoice;
+    var answerValue;
+    var userChoice;
     var button1, button2, button3, button4;
     
     var timer = 21;
@@ -27,12 +28,25 @@ $(document).ready(function () {
         ["The music sountrack from this Coen Bros movie sold over 5 million copies and won 5 Grammy awards:", "O'Brother Where Art Thou", "Hail Caeser!", "True Grit", "The Big Lebowski", 1]
     ];
     console.log("1st Quiz Question: " +quizQuestions[0][0]);
+    
+    // Create an interval timer function named gameTimer for the timer to decrement for 20 seconds on each question. 
+    // **Go back into stopwatchSolution (week 5 Activity 10, line 38) to figure out how to stop/start.**
+    intervalId = setInterval(gameTimer, 1000);
+    
+            function gameTimer() {
+                timer--;
+                if (timer === 0) {
+                    clearInterval(intervalId);
+                }
+    
+                $("#game-timer").html("<h1> Countdown: " + timer + " seconds</h1>");
+            }
 
     // Start the game. 
         // 1. Target the game-panel div with a Start Game button.
         $("#question").addClass("hide");
         $("#answer").addClass("hide");
-        $("#button").html("<button> Start Game </button>");
+        $("#button").html("So, is this the best trivia game ever? <p><p> Oh, you betcha! <p><p><button> Start Game </button>");
         
         // 2. Create on-click startGame button and function to start the game.
         $("#button").on("click", function (startGame) {
@@ -46,53 +60,60 @@ $(document).ready(function () {
     // Play the game. 
         // Display questions and its associated choices from the quizQuestions array.
         // Display in the #question and #answer divs. 
-        // Position will be used to advance to the next question. Marks the position of the outer array. 
-        // Using real positions now until I get one question to work correctly.
+        // ** Position variable will be used to advance to the next question. Marks the position of the outer array. 
+        // ** Using real positions now until I get one question to work correctly.
+        // Create on-click functions that target the answer divs.
+        // Allow for the click to capture the values for the buttons and compare it to the answerValue from quizQuestions.  
+       
         position = 0;
         button1 = 1;
         button2 = 2;
         button3 = 3;
         button4 = 4;
         answerValue = quizQuestions[0][5];
-        userChoice;
+        console.log("Answer Value: " +answerValue);
 
-        $("#question").html("<b>" + quizQuestions[0][0] + "</b><p>");
-        $("#answer1").html("<i>" + quizQuestions[0][1] + "</i>");
-        $("#answer2").html("<i>" + quizQuestions[0][2] + "</i>");
-        $("#answer3").html("<i>" + quizQuestions[0][3] + "</i>");
-        $("#answer4").html("<i>" + quizQuestions[0][4] + "</i>");
 
-        // Create on-click function that targets the answer div.
-        // Allow for the click to capture the value for the button and compare it to the answerValue from quizQuestions.  
-        
-        function userChoice(x) {
-            return (x === answerValue);
+        // Check this one: jQuery.each(substr, function(index, item) {
+        // do something with `item` (or `this` is also `item` if you like)
+        // https://stackoverflow.com/questions/3943494/how-to-loop-through-array-in-jquery
+
+        $("#game-panel").each(function playGame(){
             
-
-        }
+            $("#question").html("<b>" + quizQuestions[0][0] + "</b><p>");
+            $("#answer1").html("<i>" + quizQuestions[0][1] + "</i>");
+            $("#answer2").html("<i>" + quizQuestions[0][2] + "</i>");
+            $("#answer3").html("<i>" + quizQuestions[0][3] + "</i>");
+            $("#answer4").html("<i>" + quizQuestions[0][4] + "</i>");
+          
         $("#answer1").on("click", function () {
-            console.log("User Choice: " + userChoice)
+            userChoice = 1;
+            console.log("User Choice: " + userChoice);
             console.log("Button Value: " + button1); 
             checkAnswer();
         })    
             
         $("#answer2").on("click", function () {
-            userChoice === button2;
+            userChoice = 2;
+            console.log("User Choice: " + userChoice)
             console.log("Button Value: " + button2);  
             checkAnswer();  
         }) 
        
         $("#answer3").on("click", function () {
-            userChoice === button3;
+            userChoice = 3;
+            console.log("User Choice: " + userChoice)
             console.log("Button Value: " + button3);  
             checkAnswer();   
         })
+        
         $("#answer4").on("click", function () {
-            userChoice === button4;
+            userChoice = 4;
+            console.log("User Choice: " + userChoice)
             console.log("Button Value: " + button4);      
             checkAnswer();
         })
-             
+        });        
        
 
     // // Create a checkAnswer function to check and store what answer the user clicked.       
@@ -104,6 +125,7 @@ $(document).ready(function () {
             if (answerValue === userChoice) {
                 correctAnswers++;
                 $("#message").html("<b> Good Job! </b>");
+                // playGame();
               }
             // d. If INCORRECT choice is made, stop the timer, display a sorry message, correct answer. (Call the pageTimer function.)
             // e. Advance to the next question.
@@ -111,7 +133,8 @@ $(document).ready(function () {
 
             else (answerValue !== userChoice) 
                 incorrectAnswers++;
-                $("#message").html("<b> Too bad! </b>");
+                $("#message").html("<b> Too bad, so sad! </b>");
+                // playGame();
               
         }
             // g. If NO choice is made and timer = 0, then display a sorry message, correct answer, and fun fact for 5 seconds. (Call the pageTimer function.)
@@ -119,18 +142,6 @@ $(document).ready(function () {
             // i. Restart the timer. (Call the gameTimer function.)
     
             // }
-
-    // Create an interval timer function named gameTimer for the timer to decrement for 20 seconds on each question. 
-        // intervalId = setInterval(gameTimer, 1000);
-
-        // function gameTimer() {
-        //     timer--;
-        //     if (timer === 0) {
-        //         clearInterval(intervalId);
-        //     }
-
-        //     $("#game-timer").html("<h1> Countdown: " + timer + " seconds</h1>");
-        // }
 
     // Create a 5-second timeout loop function named pageTimer for delay on the answer and message displays. 
     // (see: https://stackoverflow.com/questions/3583724/how-do-i-add-a-delay-in-a-javascript-loop)
