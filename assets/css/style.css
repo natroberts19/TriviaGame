@@ -13,6 +13,15 @@ p, h3 {
     font-family: 'Special Elite', cursive;
 }
 
+.buttonclass {
+    margin: 5px;
+    cursor: pointer;
+}
+
+.buttonclass:hover {
+    background: white;
+}
+
 .jumbotron {
     padding: 0px 40px 10px 10px;
     border: 6px solid yellow;
