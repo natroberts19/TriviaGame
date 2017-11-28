@@ -4,11 +4,13 @@ body {
     background-size: cover;
 }
 
-h1, h2 {
+h1,
+h2 {
     font-family: 'Permanent Marker', cursive;
 }
 
-p, h3 {
+p,
+h3 {
     size: 30px;
     font-family: 'Special Elite', cursive;
 }
@@ -29,15 +31,18 @@ p, h3 {
     filter: alpha(opacity=70);
     /* For IE8 and earlier */
 }
+
 #game-title {
     float: left;
 }
 
+
+/* 
 #fun-fact {
     float: right;
     line-height: 35px;
     margin-top: 20px;
-}
+} */
 
 button {
     max-width: 100%;
@@ -45,7 +50,6 @@ button {
     font-family: 'Special Elite', cursive;
     font-size: 28px;
     padding: 20px 10px 10px 10px;
-
 }
 
 #clock-panel {
@@ -100,4 +104,3 @@ footer {
     margin-top: 20px;
     text-align: center;
 }
-
